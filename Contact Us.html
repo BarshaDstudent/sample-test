@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title> Form Validation</title>
+	<style>
+		body{
+			background: url(images/s.jpg)no-repeat center fixed;
+			/* using the backgroud images(images/s.jpg)*/
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+			color: #fff;
+			font-size: 20px;
+
+		}
+		h1{
+			font-size: 50px;
+			margin: 0px;
+			float: center;
+			padding: 0;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.course{
+			width: 500px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+			vertical-align: middle;
+		}
+		.course.input{
+			position: relative;
+			margin: 30px 0;
+		}
+
+
+		tr{
+	       float: right;
+	       list-style-type: none;
+	       margin-top: 25px;
+        }
+        tr th {
+	        display: inline-block;
+        }
+        tr th a{
+	        text-decoration: none;
+	        color: #fff;
+	        padding: 5px 20px;
+	        border: 1px solid transparent;
+	        transition: 0.6s ease;
+        }
+        tr th a:hover{
+	        background-color: #fff;
+	        color:blue;
+        }
+        .fter{
+        	position: absolute;
+			top:90%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+
+		} 
+		.fter p{
+			color: #fff; 
+			letter-spacing: 2px;
+			width: 60px;
+			font-size: 20px;
+		}
+        
+    </style>
+    <!-- closing the style tag for the text/-->	
+</head>
+<body>
+	<header>
+		
+		<nav>
+			<!-- using navigation bar/------------->
+			<table>
+		
+			<tr>
+				<th>
+					<a href="Home.html">Home</a>
+				</th>
+				<th>
+					<a href="Blog.html">Blog</a>
+				</th>
+				<th>
+					<a href="CV.html">CV</a>
+				</th>
+				<th>
+					<a href="Research.html">Research</a>
+				</th>
+				<th>
+					<a href="index.html">Contact Us</a>
+				</th>
+			</tr>
+			</table>
+
+		</nav>
+    </header>
+    <!-- closing for the header tag/-->
+</head>
+<body>
+	<div class="course">
+		<h1>Form for feedback</h1>
+	    <form name="messageForm" onsubmit="validateform()">
+			<p>First name:<input type="text" name="Firstname" class="box" id="FirstName"></p>
+			<p>Last name:<input type="text" name="lastname" lass="box" id="lastname"></p>
+			<p>Gender:<input type="radio" name="Gender" value="male"  class="box" id="gender"> female
+			<input type="radio" name="gender" value="female" class="box" id="gender"> male</p>
+			<p> message <br><textarea name="message" class="box" id="message" rows="10" cols="30" placeholder="Enter message">
+				
+		    </textarea>
+			</p>
+		    <p><input type="submit" value="send"></p>
+		</form>
+    </div>
+	<script>
+		function validateform(){
+
+			var fname=document.forms["messageForm"]["Firstname"].value;
+			
+			var lname=document.forms["messageForm"]["lastname"].value;
+
+			var gender=document.forms["messageForm"]["Gender"].value;
+			var message=document.forms["messageForm"]["message"].value;
+
+			alert(message);
+
+			if (fname=="" || lname=="" || message=="") {
+				alert("Empty fields found. please fill the form.");
+			}
+			 else{
+			 	alert("Thank you for the feedback.");
+			}
+		}
+
+	</script>
+    <div class="fter">
+	    <p>
+		    copyright@dasbarsha, 2020
+		</p>
+	</div>
+</body>
+</html>
